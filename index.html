@@ -63,21 +63,24 @@
 
   <!-- Imagen de fondo con texto superpuesto -->
   <!-- Imagen de fondo con texto superpuesto -->
-  <section class="hero">
-    <!-- Imagen agregada directamente -->
-    <img src="./index_files/IMG_2030.jpeg" alt="Fondo Viñedo" class="hero-background-img">
+  <section class="hero" style="position: relative; height: 100vh; overflow: hidden;">
+    <!-- Imagen de fondo como <img> -->
+    <img src="index_files/IMG_2030.jpeg" alt="Fondo Viñedo"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: grayscale(5%) brightness(80%);">
 
-    <div class="filtro-contenedor">
-      <!-- Filtro visual en una capa separada -->
+    <!-- Contenedor del filtro y texto -->
+    <div class="filtro-contenedor" style="position: relative; z-index: 1;">
+      <!-- Filtro en capa (si lo usas visualmente) -->
       <div class="filtro-imagen"></div>
 
-      <!-- Texto que no será afectado por el filtro -->
-      <div class="texto-overlay">
-        <span class="linea-1">EL VIEJO ALMACÉN</span>
-        <span class="linea-2">DE SAUZAL</span>
+      <!-- Texto superpuesto -->
+      <div class="texto-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+        <span class="linea-1" style="display: block; font-size: 2em; font-weight: bold; color: white;">EL VIEJO ALMACÉN</span>
+        <span class="linea-2" style="display: block; font-size: 1.5em; font-weight: normal; color: white;">DE SAUZAL</span>
       </div>
     </div>
   </section>
+
 
 
 
