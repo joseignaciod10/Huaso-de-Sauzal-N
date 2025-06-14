@@ -1,0 +1,110 @@
+/* Fondo color botella de vino */
+body.history {
+  background-color: #343b29;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+/* Flecha de retroceso */
+.back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 2em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-arrow:hover {
+  color: #ddd;
+}
+
+/* Contenedor de la historia */
+.history-content {
+  position: relative;
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+/* Imagen de la etiqueta del vino */
+.etiqueta-vino {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Caja blanca sobre la parte superior de la imagen */
+.logo-container {
+  background-color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Estilos generales para la historia */
+.texto-historia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #000;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilo específico para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  .texto-historia {
+    font-size: 2em; /* Tamaño de fuente más grande para pantallas de PC */
+    line-height: 1.8em;
+  }
+}
+
+/* Estilo específico para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .texto-historia {
+    margin-top: 30px;
+    font-size: 0.7em; /* Tamaño de fuente más pequeño para pantallas móviles */
+    line-height: 1.4em;
+  }
+}
+
+
+/* Barra inferior fija al fondo */
+.footer-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.5em;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  box-shadow: none;
+}
+
+.footer-bar p {
+  margin: 0;
+  font-weight: 500;
+}
