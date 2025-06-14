@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:5000/nuestros-vinos -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Viejo Almacén de Sauzal | Huaso de Sauzal | Vinos Artesanales | Nuestros Vinos</title>
+  <meta name="description" content="Conoce la selección de vinos artesanales en El Viejo Almacén de Sauzal. Vinos únicos producidos en las tierras de Sauzal. Huaso de SAUZAL">
+  <link rel="stylesheet" href="./nuestros-vinos_files/styles_vinos.css">
+</head>
+<body>
+
+  <!-- Barra superior con logo y flecha de retroceso -->
+  <header>
+    <a href="http://127.0.0.1:5000/" class="back-arrow">←</a>
+    <a href="http://127.0.0.1:5000/"> <!-- Enlace al index -->
+        <img src="./nuestros-vinos_files/logo.png" alt="Logo Huaso de Sauzal" class="logo">
+    </a>
+  </header>
+
+
+  <!-- Título debajo de la barra -->
+  <h1 class="page-title">NUESTROS VINOS</h1>
+
+  <!-- Sección de vinos -->
+  <section class="vinos-section">
+    <!-- Cepa Cariñena -->
+    <div class="cepa">
+      <h2>CARIÑENA</h2>
+      <a href="http://127.0.0.1:5000/historia_carinena">
+        <img src="./nuestros-vinos_files/cariñena.png" alt="Cariñena" class="cepa-img appear">
+      </a>
+      <h3>$12.000 CLP</h3>
+    </div>
+
+    <!-- Cepa Chilena -->
+    <div class="cepa">
+      <h2>CHILENA</h2>
+      <a href="http://127.0.0.1:5000/historia_chilena">
+        <img src="./nuestros-vinos_files/chilena.webp" alt="Chilena" class="cepa-img">
+      </a>
+      <h3>$12.000 CLP</h3>
+    </div>
+
+    <!-- Cepa Garnacha -->
+    <div class="cepa">
+      <h2>GARNACHA</h2>
+      <a href="http://127.0.0.1:5000/historia_garnacha">
+        <img src="./nuestros-vinos_files/garnacha.png" alt="Garnacha" class="cepa-img">
+      </a>
+      <h3>$12.000 CLP</h3>
+    </div>
+  </section>
+
+  <!-- Modal para el pop-up -->
+  <div id="popupModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <img src="./nuestros-vinos_files/logo.png" alt="Logo Huaso de Sauzal" class="modal-logo">
+      <p>Presiona sobre tu vino para más información.</p>
+    </div>
+  </div>
+
+  <!-- Barra inferior no anclada -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+  <script>
+    window.addEventListener('scroll', function() {
+      var chilenaImg = document.querySelector('.cepa-img[alt="Chilena"]');
+      var garnachaImg = document.querySelector('.cepa-img[alt="Garnacha"]');
+      
+      // Obtener la posición de las imágenes
+      var chilenaPosition = chilenaImg.getBoundingClientRect().top;
+      var garnachaPosition = garnachaImg.getBoundingClientRect().top;
+  
+      // Obtener la altura de la ventana del navegador
+      var screenPosition = window.innerHeight / 1;
+  
+      if (chilenaPosition < screenPosition) {
+        chilenaImg.classList.add('appear');
+      }
+  
+      if (garnachaPosition < screenPosition) {
+        garnachaImg.classList.add('appear');
+      }
+    });
+
+    // Mostrar el modal al cargar la página
+    window.onload = function() {
+      var modal = document.getElementById("popupModal");
+      var closeModal = document.getElementsByClassName("close")[0];
+      var cariñenaImg = document.querySelector('.cepa-img[alt="Cariñena"]');
+      
+
+      // Mostrar el modal
+      modal.style.display = "block";
+
+      // Cerrar el modal cuando se hace clic en la 'x'
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // Cerrar el modal al hacer clic fuera de la ventana del modal
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Hacer aparecer la imagen de Cariñena con un retraso
+      setTimeout(function() {
+        cariñenaImg.classList.add('appear');
+      }, 800); //
+    };
+  </script>
+  
+  
+
+
+</body></html>
